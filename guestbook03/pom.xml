@@ -5,7 +5,7 @@
     <artifactId>spring-practices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>emaillist03</artifactId>
+  <artifactId>guestbook03</artifactId>
   <packaging>war</packaging>
   
   <properties>
@@ -61,7 +61,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>emaillist03</finalName>
+		<finalName>guestbook03</finalName>
 		<plugins>
 			<plugin>
 			    <groupId>org.apache.maven.plugins</groupId>
@@ -74,7 +74,7 @@
 			    <version>1.1</version>
 			    <configuration>
 			    	<url>http://192.168.10.40:8080/manager/text</url>
-			    	<path>/emaillist03</path>
+			    	<path>/guestbook03</path>
 			    	<username>admin</username>
 			    	<password>manager</password>
 			    </configuration>
