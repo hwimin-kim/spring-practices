@@ -19,16 +19,16 @@ public class EmaillistRepository {
 	
 	public List<EmaillistVo> findAll() {
 		List<EmaillistVo> result = new ArrayList<>();
-		Connection connecion = null;
+		Connection connection = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
 		try {
-			connecion = getConnection();
+			connection = getConnection();
 			
 			// 3. SQL 준비
 			String sql = "select no, first_name, last_name, email from emaillist order by no desc";
-			pstmt = connecion.prepareStatement(sql);
+			pstmt = connection.prepareStatement(sql);
 			
 			// 4. Parameter Mapping
 			
@@ -59,8 +59,8 @@ public class EmaillistRepository {
 					rs.close();
 				if(pstmt != null)
 					pstmt.close();
-				if(connecion != null)
-					connecion.close();
+				if(connection != null)
+					connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
