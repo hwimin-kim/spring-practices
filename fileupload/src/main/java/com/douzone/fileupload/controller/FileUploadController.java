@@ -26,8 +26,9 @@ public class FileUploadController {
 		@RequestParam("file") MultipartFile multipartFile,
 		Model model) {
 		
+		System.out.println("email:" + email);
 		String url = fileUploadService.restore(multipartFile);
-		
+		System.out.println("url:" + url);
 		model.addAttribute("url", url);
 		return "/WEB-INF/views/result.jsp";
 	}
