@@ -39,6 +39,13 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- stefanbirkner Rule 
+		<dependency>
+		  <groupId>com.github.stefanbirkner</groupId>
+		  <artifactId>system-rules</artifactId>
+		  <version>1.19.0</version>
+		</dependency> -->
+		
 	</dependencies>
 
 	<build>
