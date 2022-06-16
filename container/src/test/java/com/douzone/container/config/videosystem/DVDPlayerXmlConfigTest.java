@@ -3,7 +3,6 @@ package com.douzone.container.config.videosystem;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.douzone.container.videosystem.DVDPack;
 import com.douzone.container.videosystem.DVDPlayer;
 import com.douzone.container.videosystem.DigitalVideoDisc;
 
@@ -48,7 +48,42 @@ public class DVDPlayerXmlConfigTest {
 	@Qualifier("avengersDirectorEdition")
 	@Autowired
 	private DigitalVideoDisc dvd7;
+	
+	@Autowired
+	private DVDPack dvdPack;
+	
+	@Qualifier("avengersExpansionEdition1")
+	@Autowired
+	private DigitalVideoDisc dvd8;
+	
+	@Qualifier("avengersExpansionEdition2")
+	@Autowired
+	private DigitalVideoDisc dvd9;
+	
+	@Qualifier("avengersExpansionEdition3")
+	@Autowired
+	private DigitalVideoDisc dvd10;
+	
+	@Qualifier("dvdPlayer1")
+	@Autowired
+	private DVDPlayer dvdPlayer1;
 		
+	@Qualifier("dvdPlayer2")
+	@Autowired
+	private DVDPlayer dvdPlayer2;
+	
+	@Qualifier("dvdPlayer3")
+	@Autowired
+	private DVDPlayer dvdPlayer3;
+	
+	@Qualifier("dvdPlayer4")
+	@Autowired
+	private DVDPlayer dvdPlayer4;
+	
+	@Qualifier("dvdPlayer5")
+	@Autowired
+	private DVDPlayer dvdPlayer5;
+	
 	@Disabled
 	@Test
 	public void testDVD1() {
@@ -83,6 +118,36 @@ public class DVDPlayerXmlConfigTest {
 	@Test
 	public void testDVD7() {
 		assertNotNull(dvd7);
+	}
+	
+	@Test
+	public void testDVDPack() {
+		assertNotNull(dvdPack);
+		System.out.println(dvdPack);
+	}
+	
+	@Test
+	public void testDVD8() {
+		assertNotNull(dvd8);
+	}
+	
+	@Test
+	public void testDVD9() {
+		assertNotNull(dvd9);
+	}
+	
+	@Test
+	public void testDVD10() {
+		assertNotNull(dvd10);
+	}
+	
+	@Test
+	public void testDVDPlayer1() {
+		assertEquals("Playing Movie MARVEL's Iron Man", dvdPlayer1.play());
+		assertEquals("Playing Movie MARVEL's Iron Man", dvdPlayer2.play());
+		assertEquals("Playing Movie MARVEL's Iron Man", dvdPlayer3.play());
+		assertEquals("Playing Movie MARVEL's Iron Man", dvdPlayer4.play());
+		assertEquals("Playing Movie MARVEL's Iron Man", dvdPlayer5.play());
 	}
 	
 }
